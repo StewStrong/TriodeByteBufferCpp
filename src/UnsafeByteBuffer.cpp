@@ -133,6 +133,30 @@ uint16_t UnsafeByteBuffer::getShort(uint32_t index) const {
 	return read<uint16_t>(index);
 }
 
+int32_t UnsafeByteBuffer::getSignedInt() const {
+    return read<int32_t>();
+}
+
+int32_t UnsafeByteBuffer::getSignedInt(uint32_t index) const {
+    return read<int32_t>(index);
+}
+
+int64_t UnsafeByteBuffer::getSignedLong() const {
+    return read<int64_t>();
+}
+
+int64_t UnsafeByteBuffer::getSignedLong(uint32_t index) const {
+    return read<int64_t>(index);
+}
+
+int16_t UnsafeByteBuffer::getSignedShort() const {
+    return read<int16_t>();
+}
+
+int16_t UnsafeByteBuffer::getSignedShort(uint32_t index) const {
+    return read<int16_t>(index);
+}
+
 // Write Functions
 
 void UnsafeByteBuffer::put(UnsafeByteBuffer* src) {
@@ -208,6 +232,30 @@ void UnsafeByteBuffer::putShort(uint16_t value) {
 
 void UnsafeByteBuffer::putShort(uint16_t value, uint32_t index) {
 	insert<uint16_t>(value, index);
+}
+
+void UnsafeByteBuffer::putSignedInt(int32_t value) {
+    append<int32_t>(value);
+}
+
+void UnsafeByteBuffer::putSignedInt(int32_t value, uint32_t index) {
+    insert<int32_t>(value, index);
+}
+
+void UnsafeByteBuffer::putSignedLong(int64_t value) {
+    append<int64_t>(value);
+}
+
+void UnsafeByteBuffer::putSignedLong(int64_t value, uint32_t index) {
+    insert<int64_t>(value, index);
+}
+
+void UnsafeByteBuffer::putSignedShort(int16_t value) {
+    append<int16_t>(value);
+}
+
+void UnsafeByteBuffer::putSignedShort(int16_t value, uint32_t index) {
+    insert<int16_t>(value, index);
 }
 
 // Utility Functions

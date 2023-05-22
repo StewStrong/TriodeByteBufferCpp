@@ -78,6 +78,12 @@ public:
 	uint64_t getLong(uint32_t index) const;
 	uint16_t getShort() const;
 	uint16_t getShort(uint32_t index) const;
+    int32_t getSignedInt() const;
+    int32_t getSignedInt(uint32_t index) const;
+    int64_t getSignedLong() const;
+    int64_t getSignedLong(uint32_t index) const;
+    int16_t getSignedShort() const;
+    int16_t getSignedShort(uint32_t index) const;
 
 	// Write
 
@@ -98,6 +104,12 @@ public:
 	void putLong(uint64_t value, uint32_t index);
 	void putShort(uint16_t value);
 	void putShort(uint16_t value, uint32_t index);
+    void putSignedInt(int32_t value);
+    void putSignedInt(int32_t value, uint32_t index);
+    void putSignedLong(int64_t value);
+    void putSignedLong(int64_t value, uint32_t index);
+    void putSignedShort(int16_t value);
+    void putSignedShort(int16_t value, uint32_t index);
 
 	// Buffer Position Accessors & Mutators
 
