@@ -11,10 +11,7 @@ namespace bb {
  * @param arr uint8_t array of data (should be of length len)
  * @param size Size of space to allocate
  */
-UnsafeByteBuffer::UnsafeByteBuffer(uint8_t* arr, uint32_t size) {
-	buf = arr;
-    size_internal = size;
-
+UnsafeByteBuffer::UnsafeByteBuffer(uint8_t* arr, uint32_t size) : buf(arr), size_internal(size), rpos(0), wpos(0) {
 #ifdef BB_UTILITY
 	name = "";
 #endif
