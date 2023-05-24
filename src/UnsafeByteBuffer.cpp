@@ -157,6 +157,10 @@ int16_t UnsafeByteBuffer::getSignedShort(uint32_t index) const {
     return read<int16_t>(index);
 }
 
+const uint8_t *UnsafeByteBuffer::getRawPointer() const {
+    return buf;
+}
+
 // Write Functions
 
 void UnsafeByteBuffer::put(UnsafeByteBuffer* src) {

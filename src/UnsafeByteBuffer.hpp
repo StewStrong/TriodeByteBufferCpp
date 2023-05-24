@@ -84,6 +84,8 @@ public:
     int64_t getSignedLong(uint32_t index) const;
     int16_t getSignedShort() const;
     int16_t getSignedShort(uint32_t index) const;
+    // Avoid using this whenever possible!
+    const uint8_t *getRawPointer() const;
 
 	// Write
 
