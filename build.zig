@@ -17,6 +17,10 @@ pub fn build(b: *std.Build) void {
 
     b.installArtifact(lib);
 
-    _ = b.addInstallHeaderFile(b.pathJoin(&.{ "src", "UnsafeByteBuffer.hpp" }), "UnsafeByteBuffer.hpp");
-    _ = b.addInstallHeaderFile(b.pathJoin(&.{ "src", "ByteBuffer.hpp" }), "ByteBuffer.hpp");
+    header(b, &lib.step, "UnsafeByteBuffer.hpp");
+    header(b, &lib.step, "ByteBuffer.hpp");
+}
+
+fn header(b: *std.Build, step: *std.build.Step, name: []const u8) void {
+    step.dependOn(&b.addInstallHeaderFile(b.pathJoin(&.{ "src", name }), name).step);
 }
