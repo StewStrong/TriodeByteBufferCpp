@@ -2,5 +2,5 @@
 .cproject
 .settings/*
 .settings
-build/*
-build
+/zig-cache
+/zig-out
