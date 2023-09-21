@@ -9,6 +9,8 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
     });
+    lib.stack_protector = false;
+    lib.disable_sanitize_c = true;
     lib.linkLibCpp();
     lib.addCSourceFiles(&.{
         b.pathJoin(&.{ "src", "UnsafeByteBuffer.cpp" }),
